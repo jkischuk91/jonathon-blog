@@ -80,7 +80,7 @@ if not os.path.isfile('sqlite:///blog.db'):
     blog_posts.create_all()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def get_all_posts():
     posts = BlogPost.query.all()
     return render_template("index.html", all_posts=posts, logged_in=current_user.is_authenticated)
