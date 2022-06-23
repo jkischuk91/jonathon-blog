@@ -1,1 +1,1 @@
-web : gunicorn main:app
+CMD ["gunicorn", "main:app", "-b", ":8050"]
